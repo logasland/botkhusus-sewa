@@ -38,7 +38,7 @@ module.exports = handler*/
 let fetch = require('node-fetch')
 
 let timeout = 120000
-let poin = 1000
+let poin = 2500
 let tiketcoin = 1
 let src
 let handler = async (m, { conn, usedPrefix }) => {
