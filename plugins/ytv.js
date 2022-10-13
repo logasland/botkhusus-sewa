@@ -46,7 +46,7 @@ handler.exp = 0
 module.exports = handler*/
 
 
-let limit = 30
+/*let limit = 30
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
@@ -92,5 +92,5 @@ module.exports = handler
 async function shortlink(url) {
 isurl = /https?:\/\//.test(url)
 return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''
-}
+}*/
 
