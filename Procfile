@@ -1,1 +1,1 @@
-worker: node . --db 'mongodb+srv://bimasakti:EOh2vOIwokKZC5oy@cluster0.marpilw.mongodb.net/?retryWrites=true&w=majority'
+worker : npm install && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
