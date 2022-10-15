@@ -8,10 +8,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 conn.sendFile(m.chat, json.result[0].download, 'fb.mp4', `*Title : ${json.title}*\n\n_${wm}_`, m)
 }
 handler.help = ['yt'].map(v => v + ' <url>')
-
 handler.tags = ['downloader']
-
 handler.limit = true
 handler.group = true
-
 handler.command = /^(yt|ytmp4|ytv)$/i
+
+module.exports = handler
