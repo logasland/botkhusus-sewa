@@ -12,6 +12,6 @@ handler.help = ['ytmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.limit = true
 handler.group = true
-handler.command = /^(ytmp3|ytsound|yts)$/i
+handler.command = /^(ytmp3|ytsound|yta|yts)$/i
 
 module.exports = handler
