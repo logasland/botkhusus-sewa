@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
 let name = await conn.getName(m.sender)
-let thumb = 'https://telegra.ph/file/a75f1fae1fe7232b317d3.jpg'
+//let thumb = 'https://telegra.ph/file/a75f1fae1fe7232b317d3.jpg'
 let ArdXNasBot = `Hai kak ${name}, Aku *NaRaa SHOP* 💕 dsni :D
 
 *Top UP All Game Aman terpercaya*
@@ -23,6 +23,7 @@ https://chat.whatsapp.com/LmqmgVjvHcrBQi5iAMt3Br
 conn.sendMessage(m.chat, {
         location: { degreesLatitude: undefined, degreesLongitude: undefined, jpegThumbnail: fs.readFileSync('./media/Dm.jpg') },
         caption: ArdXNasBot,
+        footer: 'NaRaa Shop',
         buttons: [
           {buttonId: `.dmml`, buttonText: {displayText: '💎DIAMOND ML💎'}, type: "RESPONSE"},
           {buttonId: `.dmff`, buttonText: {displayText: '💎DIAMOND FF💎'}, type: "RESPONSE"}
