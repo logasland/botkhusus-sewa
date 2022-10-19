@@ -21,7 +21,7 @@ Wa.me/6288220924312
 https://chat.whatsapp.com/LmqmgVjvHcrBQi5iAMt3Br
 `
 conn.sendMessage(m.chat, {
-        location: { degreesLatitude: undefined, degreesLongitude: undefined, jpegThumbnail: fs.readFileSync('./media/Maung.jpg') },
+        location: { degreesLatitude: undefined, degreesLongitude: undefined, jpegThumbnail: fs.readFileSync('./media/Dm.jpg') },
         caption: ArdXNasBot,
         buttons: [
           {buttonId: `.dmml`, buttonText: {displayText: '💎DIAMOND ML💎'}, type: "RESPONSE"},
