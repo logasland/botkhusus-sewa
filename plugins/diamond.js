@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+let fs = require('fs')
 let handler = async (m, { conn }) => {
 let name = await conn.getName(m.sender)
 //let thumb = 'https://telegra.ph/file/a75f1fae1fe7232b317d3.jpg'
