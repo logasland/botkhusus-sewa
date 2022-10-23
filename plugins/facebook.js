@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 	if (!text) throw '*Link Facebook nya mana?*\n\n*contoh:https://www.facebook.com/reel/1396322624187598?fs=e&s=cl&flite=scwspnss&mibextid=jj4577Dmmt1TazHb'
-	let res = await fetch(`https://api-vyvse.herokuapp.com/api/downloader/facebook?apikey=LURKWFujft6rrVR8HyDF&url=` + text)
+	let res = await fetch(`https://itztobz.me/api/facebook?url=https://m.facebook.com/groups/422395879719873/permalink/463841132242014/` + text)
 	let json = await res.json()
 
 conn.sendMessage(m.chat, {
