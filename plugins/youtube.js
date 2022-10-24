@@ -6,12 +6,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	let json = await res.json()
 
 conn.sendMessage(m.chat, {
-        video: await(await fetch(json.result[0].download)).buffer(),
+        image: await(await fetch(json.thumbnail)).buffer(),
         caption: `*Title :* ${json.title}\n\n\n_${wm}_`,
+        footer: 'click video/audio',
         buttons: [
-          {buttonId: `.yta ${text}`, buttonText: {displayText: 'AUDIO (MP3)'}, type: "RESPONSE"},
+          {buttonId: `.get ${json.result[0].download}`, buttonText: {displayText: 'VIDEO'}, type: "RESPONSE"},
+          {buttonId: `.yta ${text}`, buttonText: {displayText: 'Mp3'}, type: "RESPONSE"},
         ],
-        headerType: 'VIDEO'
+        headerType: 'IMAGE'
   }, { quoted: m })
 }
 
