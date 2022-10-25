@@ -5,6 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	let res = await fetch(`https://itztobz.me/api/facebook?url=` + text)
 	let json = await res.json()
 
+m.reply('_*sabar banh lagi diprosses klo gagal ra peduli :v*_')
 conn.sendMessage(m.chat, {
         video: await(await fetch(json.result._360p)).buffer(),
         caption: `*Durasi :* ${json.result.duration}\n*Quality :* 360p\n\n_${wm}_`,
