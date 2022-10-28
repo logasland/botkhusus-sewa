@@ -2,10 +2,10 @@ const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, usedPrefix, owner }) => { 
     try { 
         let __timers = (new Date - global.db.data.users[m.sender].lastadventure)
-        let _timers = (3600000 - __timers) 
+        let _timers = (7200000 - __timers) 
         let timers = clockString(_timers)
         if (global.db.data.users[m.sender].health > 79) {
-            if (new Date - global.db.data.users[m.sender].lastadventure > 3600000) {
+            if (new Date - global.db.data.users[m.sender].lastadventure > 7200000) {
             let armor = global.db.data.users[m.sender].armor
             let rubah = global.db.data.users[m.sender].rubah
             let kuda = global.db.data.users[m.sender].kuda
@@ -80,7 +80,7 @@ function pickRandom(list) {
 }
 
 function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
+  let h = Math.floor(ms / 7200000)
   let m = Math.floor(ms / 60000) % 60
   let s = Math.floor(ms / 1000) % 60
   console.log({ms,h,m,s})
