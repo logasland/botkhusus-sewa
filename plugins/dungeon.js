@@ -719,7 +719,7 @@ function M(jid) {
  * @returns String
  */
 function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
+  let h = Math.floor(ms / 7200000)
   let m = Math.floor(ms / 60000) % 60
   let s = Math.floor(ms / 1000) % 60
   console.log({ms,h,m,s})
