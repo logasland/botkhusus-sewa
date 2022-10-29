@@ -64,7 +64,7 @@ let sayangkamuh = saymu[Math.floor(Math.random() * saymu.length)]
 ]
 let loveyou = lovou[Math.floor(Math.random() * lovou.length)]
     if (isLoveYou && !m.fromMe) {
-    let helloaine = fs.readFileSync('./mp3/PTT-20211218-WA0243.opus') 
+    let helloaine = fs.readFileSync('./mp3/waalaikumsalam.mp3') 
     conn.sendMessage(m.chat, {
         react: {
           text: `${loveyou}`,
