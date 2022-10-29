@@ -1,21 +1,14 @@
-let fetch = require('node-fetch')
+let { facebookDl } = require('../lib/scraper.js')
+let { savefrom } = require('@bochilteam/scraper')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-	if (!text) throw '*Link Facebook nya mana?*\n\n*contoh:https://www.facebook.com/reel/1396322624187598?fs=e&s=cl&flite=scwspnss&mibextid=jj4577Dmmt1TazHb'
-	let res = await fetch(`https://itztobz.me/api/facebook?url=` + text)
-	let json = await res.json()
-
-await m.reply('_*sabar banh lagi diprosses klo gagal ra peduli :v...*_')
-conn.sendMessage(m.chat, {
-        video: await(await fetch(json.result._360p)).buffer(),
-        caption: `*Durasi :* ${json.result.duration}\n*Quality :* 360p\n\n_${wm}_`,
-        buttons: [
-          {buttonId: `.get ${json.result._720p}`, buttonText: {displayText: '720P'}, type: "RESPONSE"},
-        ],
-        headerType: 'VIDEO'
-  }, { quoted: m })
-  }
-
+	if (!text) throw '*Link Facebook nya mana?*\n\n*contoh:https://www.facebook.com/groups/BuHeMaKi/permalink/2661876587433913/?app=fbl'
+	let res = await facebookDl(text).catch(async _ => await savefrom(text)).catch(_ => null)
+	if (!res) throw 'Can\'t download the post'
+	let url = res?.url?.[0]?.url || res?.url?.[1]?.url || res?.['720p'] || res?.['360p']
+	await m.reply('_In progress, please tungguan..._')
+	conn.sendMessage(m.chat, { video: { url }, caption: res?.meta?.title || '' }, { quoted: m })
+}
 handler.help = ['fb'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.limit = true
