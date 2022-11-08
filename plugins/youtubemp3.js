@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	let json = await res.json()
 
 await m.reply('_*sabar banh lagi diprosses klo gagal ra peduli :v...*_')
-conn.sendFile(m.chat, json.result[0].download, 'fb.mp4', author, m)
+conn.sendFile(m.chat, json.result.url, 'fb.mp4', author, m)
 }
 
 handler.help = ['ytmp3'].map(v => v + ' <url>')
