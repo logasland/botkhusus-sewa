@@ -1,19 +1,19 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-	if (!text) throw `*Link Youtube nya mana?*\n\n*contoh:https://youtu.be/oa04wbLyENo`
-	let res = await fetch(`https://itztobz.me/api/youtube-mp4?url=` + text)
+	if (!text) throw `*Link Youtube nya mana kak?*\n\n*contoh:https://youtu.be/oa04wbLyENo`
+	let res = await fetch(`await fetch(`https://saipulanuar.ga/api/download/ytmp4?url=` + text + `&apikey=TcFrwf4v`)
 	let json = await res.json()
 
+await m.reply(`*_Sabar kak ${name} lagi di proses.._*`)
 conn.sendMessage(m.chat, {
-        image: await(await fetch(json.thumbnail)).buffer(),
-        caption: `*Title :* ${json.title}\n\n\n_${wm}_`,
-        footer: 'click video/audio',
+        video: await(await fetch(json.result.url)).buffer(),
+        caption: `*Judul video :* ${json.title}\n*dari channel :* ${json.result.channel}\n*publish :* ${json.result.published}\n*jumlah yg nonton😱 : ${json.result.views}\n_${wm}_`,
+        footer: `request by ${name}`,
         buttons: [
-          {buttonId: `.get ${json.result[0].download}`, buttonText: {displayText: 'VIDEO'}, type: "RESPONSE"},
           {buttonId: `.yta ${text}`, buttonText: {displayText: 'Mp3'}, type: "RESPONSE"},
         ],
-        headerType: 'IMAGE'
+        headerType: 'VIDEO'
   }, { quoted: m })
 }
 
