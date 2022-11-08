@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 	if (!text) throw `*Link Youtube nya mana?*\n\n*contoh:https://youtu.be/oa04wbLyENo`
-	let res = await fetch(`https://itztobz.me/api/youtube-mp3?url=` + text)
+	let res = await fetch(`https://saipulanuar.ga/api/download/ytmp3?url=` + text + `&apikey=TcFrwf4v`)
 	let json = await res.json()
 
 await m.reply('_*sabar banh lagi diprosses klo gagal ra peduli :v...*_')
